@@ -41,8 +41,8 @@ $busDay = date(D);
 if (isset($_POST['submit'])){
 
 
-$sql = "INSERT INTO arrival (busNumber, busTimeStamp, busDateStamp, busWeekStamp, busDay)
-VALUES ('$busNumber[0]', '$datTime', '$busDateStamp', '$busWeek', '$busDay')";
+$sql = "INSERT INTO arrival (busNumber, busTimeStamp, busDateStamp, busWeekStamp, busDay, finalized)
+VALUES ('$busNumber[0]', '$datTime', '$busDateStamp', '$busWeek', '$busDay', '')";
 
 if ($conn->query($sql) === TRUE) {
    // echo "<div align='center'>";
@@ -82,7 +82,7 @@ $sql = "UPDATE bus SET arrived='' WHERE arrived='y'";
 $sql1 = "UPDATE arrival SET finalized='yes' WHERE busDateStamp='$busDateStamp'";
 
 if ($conn->query($sql) === TRUE)
-     
+
    {
 //  echo "<div align='center'>";
   //echo "<br><br>";
@@ -95,8 +95,8 @@ if ($conn->query($sql) === TRUE)
 //if (
     $conn->query($sql1) === TRUE;
 //    ) {
-    
-    
+
+
 //}
 //session_unset();
 $_SESSION["busDutyDone"] = "yes";

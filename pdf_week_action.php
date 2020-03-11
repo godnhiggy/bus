@@ -1,5 +1,5 @@
 <?php
-require("fpdf182/fpdf.php");
+require("fpdf.php");
 
 
 //echo "this is werking";

@@ -1,5 +1,5 @@
 <?php
-require("fpdf182/fpdf.php");
+require("fpdf.php");
 if(!empty($_POST["submitDate"])){
 $today = date("Y.m.d");
 $pdf=new FPDF();
@@ -92,7 +92,7 @@ $pdf->Cell(100,20,"This document created on {$today}",0,1);
   echo $pdfWeek;
   $pdfPrintDate = date("D m:d:y");
     $db = mysqli_connect('localhost', 'bjekqemy_higgy', 'Brett73085', 'bjekqemy_bus');
-    
+
     $bus_query = "SELECT * FROM bus";
     $week_query = "SELECT * FROM arrival WHERE busWeekStamp='$pdfWeek' AND busNumber='$busNumberQ'";
     $result = mysqli_query($db, $bus_query);
