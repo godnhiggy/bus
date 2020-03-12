@@ -1,7 +1,6 @@
 <?php
-
 session_start();
-
+date_default_timezone_set("America/Detroit");
 
 //if (!isset($_SESSION['username'])) {
 //  	$_SESSION['msg'] = "You must log in first";
@@ -108,7 +107,7 @@ $_SESSION["completed"]=NULL;
   	<h2>Bus Edit</h2>
   </div>
 <div class="item2">
-  <?php
+    <?php
   $servername = "localhost";
   $dbusername = "bjekqemy_higgy";
   $password = "Brett73085";
@@ -126,9 +125,7 @@ $_SESSION["completed"]=NULL;
   <form action="edit_action.php" method="POST">
   <?php
   $todayDate = date("m:d:y");
-  //if (!$_SESSION["delete"])
-  //{
-      $sql = "SELECT * FROM arrival WHERE busDateStamp='$todayDate' AND finalized=''";
+        $sql = "SELECT * FROM arrival WHERE busDateStamp='$todayDate' AND finalized=''";
       $result = $conn->query($sql);
       if ($result->num_rows > 0)
                 {
@@ -137,15 +134,14 @@ $_SESSION["completed"]=NULL;
           while($row = $result->fetch_assoc()) {
 
               $busNumber = $row["busNumber"];
+
               $busTimeStamp = $row["busTimeStamp"];
               $busDateTime = $row["busDateStamp"];
 
-        echo "<table><th><td id='width'>Bus #".$busNumber." </td><td id='width'>".$busTimeStamp;
-        echo "</td><td>
+        echo "<table><th><td id='width'>Bus #".$busNumber." </td><td>Click Time to Delete --></td><td>
 
-            <input class='button' type='submit' value='Delete' name='send'>
-            <input type='hidden' value='$busTimeStamp' name='delete'>
-            <input type='hidden' value='$busNumber' name='busNumber'>
+            <input class='button' type='submit' value='".$busTimeStamp."' name='delete'>
+
 
 
         </td></th></table><br>";
@@ -154,8 +150,8 @@ $_SESSION["completed"]=NULL;
 
 
           }
-       }
 
+}
       ?>
 
     </form>

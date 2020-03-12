@@ -114,17 +114,17 @@ float: left;
 if(!empty($_SESSION["busDutyDone"])){
     echo "Your Bus Duty is OVER for the day!";
     echo "<br>";
-    echo "Now go Have a nice day...Yer Awesome!";
+    echo "Now go have a nice day...Yer Awesome!";
     echo "<br>";
 echo $startDate;
-echo "<br>";
-echo $busDutyDone;
+//echo "<br>";
+//echo $busDutyDone;
 } else {
 echo "Hey Teach! Welcome to Bus Duty! ";
 echo "<br>";
 echo $startDate;
-echo "<br>";
-echo $busDutyDone;
+//echo "<br>";
+//echo $busDutyDone;
 }
      ?>
   </div>
@@ -289,7 +289,7 @@ if ($conn->connect_error) {
   <div class="item6">
     <form action="confirm_completion.php" method="POST">
 
-      <input class="button" type="submit" value="completed" name="completed">
+      <input class="button" type="submit" value="Click When Bus Duty Completed" name="completed">
 
     </form>
 
