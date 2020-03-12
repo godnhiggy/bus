@@ -90,7 +90,7 @@ float: left;
 
 .grid-container > div {
   background-color: rgba(255, 255, 255, 0.8);
-  text-align: center; 
+  text-align: center;
   padding: 20px 0;
   font-size: 40px;
 }
@@ -119,7 +119,7 @@ if(!empty($_SESSION["busDutyDone"])){
 echo $startDate;
 echo "<br>";
 echo $busDutyDone;
-} else {   
+} else {
 echo "Hey Teach! Welcome to Bus Duty! ";
 echo "<br>";
 echo $startDate;
@@ -151,13 +151,13 @@ echo $busDutyDone;
   //installing a list to choose team members
   ?>
   <!--<label for="busNumber">Bus Number<br></label>-->
-  
+
   <select name="busNumber[]" required>
   <option value="" disabled>Select Bus</option>
   <?php
   $sql = "SELECT busNumber, arrived FROM bus ORDER BY busNumber";
   $result = $conn->query($sql);
-  
+
   //$arrived = $result->fetch_assoc();
   //$busNumber = $_POST[""];
   //$sqlA = "UPDATE bus SET arrived='y' WHERE busNumber='$busNumber'";
@@ -199,18 +199,19 @@ echo $busDutyDone;
 
   </select>  <br>
       <input type="hidden" name="busTime" value=busTime>
-      
-      
+
+
       <br><br><br>
     <label for="submit"></label><input class="button" type="submit" value="Submit Time" name="submit">
    </form>
-  
-  
+
+
   <br><br><br><br><br>
-  <a href='add_bus.php'>Click Here</a> <br>if bus not on BUS LIST
+  <a href='add_bus.php'>Click Here</a> <br>if Bus not on BUS LIST
   <br><br>
-  <a href='pdf_create_date.php'>Click Here</a> <br>to print Bus Log
-  
+  <a href='pdf_create_date.php'>Click Here</a> <br>to Print Bus Log
+  <br><br>
+  <a href='edit.php'>Click Here</a> <br>to Delete a record
   </div>
   <div class="item4">
 <?php
@@ -225,14 +226,14 @@ $todayDate = date("m:d:y");
         // output data of each row
         while($row = $result->fetch_assoc()) {
            // $totalwordcount = str_word_count($row["essay"]);
-           
-           
+
+
             $busNumber = $row["busNumber"];
             $busTimeStamp = $row["busTimeStamp"];
             //$d=strtotime($busTimeStamp);
             //$displayTime = date("g:i A", $d);
-            
-            
+
+
             $busDateTime = $row["busDateStamp"];
             //$d=strtotime($datTime);
             //$datTime = date("D", $d);
